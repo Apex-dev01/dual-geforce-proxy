@@ -1,0 +1,52 @@
+{
+  "name": "dual-geforce-proxy-socks5",
+  "version": "1.0.0",
+  "description": "SOCKS5 proxy server for GeForce Now with public proxy support",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "NODE_ENV=development node server.js",
+    "test-proxies": "node -e \"const server = require('./server.js'); const s = new server(); s.testPublicProxies().then(console.log);\"",
+    "build": "echo 'No build step required for SOCKS5 server'",
+    "lint": "echo 'Add ESLint configuration if needed'"
+  },
+  "keywords": [
+    "socks5",
+    "proxy",
+    "geforce-now",
+    "gaming",
+    "network",
+    "tunnel"
+  ],
+  "author": "Apex-dev01",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "net": "^1.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Apex-dev01/dual-geforce-proxy.git",
+    "directory": "socks5"
+  },
+  "bugs": {
+    "url": "https://github.com/Apex-dev01/dual-geforce-proxy/issues"
+  },
+  "homepage": "https://github.com/Apex-dev01/dual-geforce-proxy#readme",
+  "config": {
+    "socks5": {
+      "defaultHost": "0.0.0.0",
+      "defaultPort": 1080,
+      "maxConnections": 100,
+      "timeout": 30000
+    }
+  },
+  "bin": {
+    "socks5-server": "./server.js"
+  }
+}
